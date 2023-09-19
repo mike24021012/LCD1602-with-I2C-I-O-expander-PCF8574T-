@@ -208,32 +208,32 @@ static int initial_setting(void){
 	// figure 24, pg 46
 	
 	// we start in 8bit mode, try to set 4 bit mode
-    result = command(this_client, 0x03 << 4);
+    	result = command(this_client, 0x03 << 4);
 	if(result < 0)
 		return result;
-    mdelay(5); // wait min 4.1ms
+   	mdelay(5); // wait min 4.1ms
    
-    // second try
-    result = command(this_client, 0x03 << 4);
+    	// second try
+   	result = command(this_client, 0x03 << 4);
 	if(result < 0)
 		return result;
-    mdelay(5); // wait min 4.1ms
+ 	mdelay(5); // wait min 4.1ms
    
-    // third go!
-    result = command(this_client, 0x03 << 4);
+    	// third go!
+    	result = command(this_client, 0x03 << 4);
 	if(result < 0)
 		return result;
-    mdelay(5);
+    	mdelay(5);
    
-    // finally, set to 4-bit interface
-    result = command(this_client, 0x02 << 4);
+    	// finally, set to 4-bit interface
+    	result = command(this_client, 0x02 << 4);
 	if(result < 0)
 		return result;
-    mdelay(5); 
+    	mdelay(5); 
 
 	// set # lines font size etc
-    my_command = 0;
-    my_command |= LCD_FUNCTIONSET;
+   	my_command = 0;
+    	my_command |= LCD_FUNCTIONSET;
 	my_command |= LCD_2LINE;
 	my_command |= LCD_5x10DOTS;
 	result = command(this_client, my_command);
@@ -363,7 +363,7 @@ static struct i2c_driver lcd1602_driver = {
     .driver = {
         		.name = LCD1602_NAME,
         		.owner = THIS_MODULE,
-    		  },
+    	      },
 };
 
 static int __init lcd1602_init(void){
