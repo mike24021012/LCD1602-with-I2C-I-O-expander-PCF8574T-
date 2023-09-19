@@ -8,8 +8,6 @@
 #include<pthread.h>
 
 #define DEVICE_NAME "/dev/lcd1602"
-#define MAGIC_NUMBER 'X'
-#define IOCTL_SET	_IO(MAGIC_NUMBER,  1)
 
 int main(void)
 {
@@ -53,7 +51,7 @@ int main(void)
 		break;		
 	}
 	
-	if (lcd1602_file >= 0)	 //close humidityfd if open
+	if (lcd1602_file >= 0)	 //close lcd1602_file if open
 	{
 		close(lcd1602_file);
 		printf("close lcd1602 device success.\n");
